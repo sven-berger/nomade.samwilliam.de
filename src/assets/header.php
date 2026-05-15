@@ -18,7 +18,7 @@
                 <div class="bg-white/35 rounded px-4 py-3 md:px-8 md:py-6 rounded-b-md">
                     <h1 class="text-3xl sm:text-5xl lg:text-7xl font-light text-center">
                         Nomade & Nigiri<br>
-                        <h3 class="lg:mt-5">Event-Catering, das begeistert. <a href=""
+                        <h3 class="lg:mt-5">Event-Catering, das begeistert. <a href="index.php?page=tischreservierung"
                                 class="text-red-700 font-bold">Jetzt anfragen</a>.</h3>
                     </h1>
                 </div>
