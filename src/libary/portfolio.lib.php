@@ -12,7 +12,7 @@
     <p class="mt-2 text-sm text-gray-600">80 Gaeste · Private Feier</p>
     <p class="mt-3 text-gray-700">Mehrgaengiges Sharing-Menue mit vegetarischem Fokus, Dessertbar und Mitternachtssnacks.</p>
   </article>
-  <article class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+  <article class="rounded-xl border border-gray-200 bg-white p-6">
     <h3 class="text-lg font-semibold">Messe-Catering Hamburg</h3>
     <p class="mt-2 text-sm text-gray-600">3 Tage · 900 Portionen</p>
     <p class="mt-3 text-gray-700">Modulares Konzept fuer hohe Frequenz: schnelle Ausgabe, gleichbleibende Qualitaet und klare Markeninszenierung am Stand.</p>
