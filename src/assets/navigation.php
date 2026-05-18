@@ -1,4 +1,4 @@
-<nav class="bg-green-500 text-white sticky lg:p-5 top-0 z-50">
+<nav class="bg-orange-500 text-white sticky lg:p-5 top-0 z-50">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="flex items-center justify-between py-3">
       <a href="index.php?page=index" class="font-semibold">Nomade & Nigiri</a>
