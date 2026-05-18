@@ -1,9 +1,10 @@
 {
-	"scripts": {
-		"watch:css": "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./src/input.css -o ./src/output.css --watch"
-	},
-	"dependencies": {
-		"@tailwindcss/cli": "^4.2.1",
-		"tailwindcss": "^4.2.1"
-	}
+    "scripts": {
+        "watch:css": "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./src/input.css -o ./src/output.css --watch",
+        "build": "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./src/input.css -o ./src/output.css --minify"
+    },
+    "dependencies": {
+        "@tailwindcss/cli": "^4.2.1",
+        "tailwindcss": "^4.2.1"
+    }
 }

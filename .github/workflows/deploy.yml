@@ -17,10 +17,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            npm install tailwindcss @tailwindcss/cli
             cd /var/projects/nomade.samwilliam.de
             git pull origin main
             npm install
             npm run build
             chown -R www-data:www-data /var/projects/nomade.samwilliam.de
-            npm run watch:css
