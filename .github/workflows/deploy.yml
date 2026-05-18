@@ -1,40 +1,24 @@
-name: Deploy via SFTP
+name: Remote Deploy on vServer
 
 on:
   push:
-    branches: ["main"]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Ensure lftp is installed
-        run: command -v lftp || (sudo apt-get update && sudo apt-get install -y lftp)
-
-      - name: Deploy
-        env:
-          SFTP_HOST: ${{ secrets.SFTP_HOST }}
-          SFTP_USER: ${{ secrets.SFTP_USER }}
-          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
-          SFTP_TARGET_PATH: ${{ secrets.SFTP_TARGET_PATH }}
-        run: |
-          lftp -e "
-          set sftp:auto-confirm yes
-          open -u ${SFTP_USER},${SFTP_PASSWORD} sftp://${SFTP_HOST}
-
-          mirror --reverse \
-            --ignore-time \
-            --parallel=5 \
-            --verbose=1 \
-            --exclude-glob .git/ \
-            --exclude-glob .github/ \
-            --exclude-glob .gitignore \
-            --exclude-glob README.md \
-            ./ ${SFTP_TARGET_PATH}
-          bye
-          "
+      - name: Executing remote SSH commands to deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /var/projects/nomade.samwilliam.de
+            git pull origin main
+            npm install
+            npm run build
+            chown -R www-data:www-data /var/projects/nomade.samwilliam.de
