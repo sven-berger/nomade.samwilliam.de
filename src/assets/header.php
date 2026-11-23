@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../output.css" rel="stylesheet">
+    <link href="<?php echo '/output.css?' . filemtime(__DIR__ . '/../output.css'); ?>" rel="stylesheet">
     <title>NoMade & Nigiri</title>
 </head>
 
