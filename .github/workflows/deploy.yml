@@ -20,7 +20,5 @@ jobs:
             cd /var/projects/nomade.samwilliam.de
             git pull origin main
             npm install
-            npm outdated
-            npm update
             npm run build
             chown -R www-data:www-data /var/projects/nomade.samwilliam.de
